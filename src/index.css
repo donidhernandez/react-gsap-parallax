@@ -1,1 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+
 @import "tailwindcss";
+
+@theme {
+    --font-space-grotesk: 'Space Grotesk', sans-serif;
+}
+
+.title::after {
+    position: absolute;
+    inset: 0 0 0 0;
+    content: attr(data-content);
+    z-index: 2;
+    -webkit-text-stroke: 5px #444;
+    color: transparent;
+}
+
+
+.scroll-indicator::before {
+    content: "↓";
+    display: block;
+    font-size: 2rem;
+    margin-bottom: 5px;
+}
+
+@keyframes bounce {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    40% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+    60% {
+        transform: translateX(-50%) translateY(-5px);
+    }
+}
+
+.section-wrapper {
+    will-change: transform;
+}
+
+.sky, .sky-moon, .back-cloud, .back-mountain,
+.front-mountain, .cloud-floor, .cloud-floor-2,
+.front-cloud, .cloud-single, .spaceship {
+    will-change: transform;
+}
